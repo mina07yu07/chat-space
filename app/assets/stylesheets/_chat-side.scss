@@ -10,25 +10,25 @@
   height: 100px;
   display: flex;
   align-items: center;
-}
 
-.side-header__box  {
-  margin: 0 20px;
-  height: 20px;
-  width: 260px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
+  &__box  {
+    margin: 0 20px;
+    height: 20px;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
 
-.side-header__box__user-name {
-  font-size: 16px;
-  color: #ffffff;
-}
+    &__user-name {
+      font-size: 16px;
+      color: #ffffff;
+    }
 
-.side-header__box__menu {
-  display: flex;
-  list-style: none;
+    &__menu {
+      display: flex;
+      list-style: none;
+    }
+  }
 }
 
 .icon {
@@ -46,13 +46,13 @@
 
 .group {
   margin-bottom: 40px;
-}
 
-.group__group-name {
-  font-size: 15px;
-  margin-bottom: 5px;
-}
+  &__group-name {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
 
-.group__last-massage {
-  font-size: 11px;
+  &__last-massage {
+    font-size: 11px;
+  }
 }
