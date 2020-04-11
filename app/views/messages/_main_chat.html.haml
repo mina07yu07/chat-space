@@ -1,0 +1,47 @@
+.chat-main
+  .main-header
+    .main-header__left-heder
+      %h2.main-header__left-heder__culent-group
+        test
+      %ul.main-header__left-heder__member-list
+        Menber:
+        %li.main-header__left-heder__member-list__member 
+          masa
+    =link_to "#", class:"main-header__edit-btn" do
+      Edit
+  .massages
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/04/10(Fri) 20:44:57
+      .message__text
+        おはよう！
+    
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/04/10(Fri) 20:44:57
+      .message__text
+        おはよう！
+    
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/04/10(Fri) 20:44:57
+      .message__text
+        おはよう！
+
+  .form
+    %form.new-massage
+      .input-box
+        %input{type: "text",class:"input-box__text",placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type:"file", class: "input-box__image__file"}
+      %input{type:"submit",value: "Send", class:"submit-btn"}
