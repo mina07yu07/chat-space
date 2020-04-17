@@ -2,46 +2,24 @@
   .main-header
     .main-header__left-heder
       %h2.main-header__left-heder__culent-group
-        test
+        = @group.name
       %ul.main-header__left-heder__member-list
-        Menber:
-        %li.main-header__left-heder__member-list__member 
-          masa
-    =link_to "#", class:"main-header__edit-btn" do
+        Member:
+        - @users.each do |user|
+          %li.main-header__left-heder__member-list__member 
+            = user.name
+    =link_to edit_group_path(@group), class:"main-header__edit-btn" do
       Edit
-  .massages
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          masa
-        .message__upper-info__date
-          2020/04/10(Fri) 20:44:57
-      .message__text
-        おはよう！
-    
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          masa
-        .message__upper-info__date
-          2020/04/10(Fri) 20:44:57
-      .message__text
-        おはよう！
-    
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          masa
-        .message__upper-info__date
-          2020/04/10(Fri) 20:44:57
-      .message__text
-        おはよう！
+
+  .messages
+    = render @messages
+
 
   .form
-    %form.new-massage
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text",class:"input-box__text",placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content, class: "input-box__text", placeholder: 'type a message'
+        = f.label :image, class: "input-box__image" do
           = icon('fas', 'image')
-          %input{type:"file", class: "input-box__image__file"}
-      %input{type:"submit",value: "Send", class:"submit-btn"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: "submit-btn"
